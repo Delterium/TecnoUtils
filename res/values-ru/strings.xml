@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OTG</string>
+    <string name="otg_settings_title">OTG</string>
+    <string name="otg_switch_label">Включить USB OTG</string>
+    <string name="connected_devices_header">Подключенные USB-устройства</string>
+    <string name="no_devices_detected">Устройства не обнаружены</string>
+    <string name="device_info_format">%1$s %2$s\n[VID: %3$s | PID: %4$s]</string>
+    <string name="unknown_manufacturer">Неизвестно</string>
+    <string name="unknown_device">USB-устройство</string>
+    <string name="otg_timeout_label">Таймер автовыключения</string>
+    <string name="timeout_5_min">5 минут</string>
+    <string name="timeout_10_min">10 минут</string>
+    <string name="timeout_20_min">20 минут</string>
+    <string name="timeout_30_min">30 минут</string>
+    <string name="timeout_never">Всегда включено</string>
+</resources>

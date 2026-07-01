@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Блок переключателя -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/otg_switch_label"
+            android:textSize="18sp"
+            android:textColor="?android:attr/textColorPrimary" />
+
+        <Switch
+            android:id="@+id/otg_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Блок выбора таймера -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/otg_timeout_label"
+            android:textSize="16sp"
+            android:textColor="?android:attr/textColorPrimary" />
+
+        <Spinner
+            android:id="@+id/timeout_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <!-- Блок подключенных устройств -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/connected_devices_header"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="?android:attr/colorAccent"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_devices_detected"
+        android:textColor="?android:attr/textColorSecondary"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/device_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="?android:attr/listDivider"
+        android:dividerHeight="1dp" />
+
+</LinearLayout>

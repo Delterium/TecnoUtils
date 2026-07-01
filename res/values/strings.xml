@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OTG</string>
+    <string name="otg_settings_title">OTG</string>
+    <string name="otg_switch_label">Enable USB OTG</string>
+    <string name="connected_devices_header">Connected USB Devices</string>
+    <string name="no_devices_detected">No devices detected</string>
+    <string name="device_info_format">%1$s %2$s\n[VID: %3$s | PID: %4$s]</string>
+    <string name="unknown_manufacturer">Unknown</string>
+    <string name="unknown_device">USB Device</string>
+    <string name="otg_timeout_label">Auto-off Timer</string>
+    <string name="timeout_5_min">5 Minutes</string>
+    <string name="timeout_10_min">10 Minutes</string>
+    <string name="timeout_20_min">20 Minutes</string>
+    <string name="timeout_30_min">30 Minutes</string>
+    <string name="timeout_never">Always On</string>
+</resources>
