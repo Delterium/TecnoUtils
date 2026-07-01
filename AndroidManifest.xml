@@ -23,7 +23,7 @@
             
             <meta-data
                 android:name="com.android.settings.category"
-                value="com.android.settings.category.ia.connect" />
+                android:value="com.android.settings.category.ia.connect" />
         </activity>
 
         <service
