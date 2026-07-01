@@ -21,7 +21,6 @@ public class OtgService extends Service {
     private final Runnable mOtgOffRunnable = () -> {
         Log.d(TAG, "Timeout reached. Disabling OTG power.");
         OtgUtils.setOtgEnabled(false);
-        // Оповещаем UI Настроек и Tile о выключении
         sendBroadcast(new Intent("xyz.delterium.tecno_utils.OTG_STATE_CHANGED"));
         stopSelf();
     };
@@ -65,12 +64,10 @@ public class OtgService extends Service {
         int timeoutMinutes = prefs.getInt(OtgUtils.KEY_TIMEOUT, OtgUtils.DEFAULT_TIMEOUT);
 
         if (timeoutMinutes == -1) {
-            // Режим "Всегда включено"
             stopTimer();
             return;
         }
 
-        // Проверяем, подключено ли уже какое-то устройство
         if (mUsbManager.getDeviceList() != null && !mUsbManager.getDeviceList().isEmpty()) {
             stopTimer();
             return;

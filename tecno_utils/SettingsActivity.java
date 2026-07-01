@@ -31,9 +31,8 @@ public class SettingsActivity extends Activity {
     private List<String> mDeviceNames = new ArrayList<>();
     private SharedPreferences mPrefs;
 
-    private final int[] mTimeoutValues = {5, 10, 20, 30, -1}; // значение -1 означает "Всегда включено"
+    private final int[] mTimeoutValues = {5, 10, 20, 30, -1}; 
 
-    // Ресивер для обновления интерфейса
     private final BroadcastReceiver mStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -60,7 +59,6 @@ public class SettingsActivity extends Activity {
         mDeviceListView = findViewById(R.id.device_list);
         mEmptyView = findViewById(R.id.empty_view);
 
-        // Настройка Spinner (выбор интервала)
         String[] timeoutLabels = {
                 getString(R.string.timeout_5_min),
                 getString(R.string.timeout_10_min),
@@ -72,9 +70,8 @@ public class SettingsActivity extends Activity {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mTimeoutSpinner.setAdapter(spinnerAdapter);
 
-        // Установка сохраненного значения времени
         int currentTimeout = mPrefs.getInt(OtgUtils.KEY_TIMEOUT, OtgUtils.DEFAULT_TIMEOUT);
-        int selectionIndex = 1; // 10 мин по умолчанию
+        int selectionIndex = 1; 
         for (int i = 0; i < mTimeoutValues.length; i++) {
             if (mTimeoutValues[i] == currentTimeout) {
                 selectionIndex = i;
@@ -88,7 +85,6 @@ public class SettingsActivity extends Activity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 int selectedValue = mTimeoutValues[position];
                 mPrefs.edit().putInt(OtgUtils.KEY_TIMEOUT, selectedValue).apply();
-                // Перезапускаем проверку таймера
                 if (OtgUtils.isOtgEnabled()) {
                     OtgUtils.updateOtgService(SettingsActivity.this, true);
                 }
@@ -98,7 +94,6 @@ public class SettingsActivity extends Activity {
             public void onNothingSelected(AdapterView<?> parent) {}
         });
 
-        // Настройка списка устройств
         mDeviceAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mDeviceNames);
         mDeviceListView.setAdapter(mDeviceAdapter);
 
@@ -108,7 +103,6 @@ public class SettingsActivity extends Activity {
             OtgUtils.updateOtgService(this, isChecked);
         });
 
-        // Регистрация общего ресивера событий
         IntentFilter filter = new IntentFilter();
         filter.addAction("xyz.delterium.tecno_utils.OTG_STATE_CHANGED");
         filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);

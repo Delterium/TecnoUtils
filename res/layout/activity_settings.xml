@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Блок переключателя -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +26,6 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <!-- Блок выбора таймера -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +52,6 @@
         android:layout_height="1dp"
         android:background="?android:attr/listDivider" />
 
-    <!-- Блок подключенных устройств -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

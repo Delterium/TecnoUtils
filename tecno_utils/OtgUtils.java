@@ -13,7 +13,7 @@ public class OtgUtils {
     
     public static final String PREF_NAME = "OtgSettings";
     public static final String KEY_TIMEOUT = "otg_timeout_value";
-    public static final int DEFAULT_TIMEOUT = 10; // 10 минут по умолчанию
+    public static final int DEFAULT_TIMEOUT = 10; 
 
     public static boolean isOtgEnabled() {
         try (BufferedReader reader = new BufferedReader(new FileReader(OTG_PATH))) {

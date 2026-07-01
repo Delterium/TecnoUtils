@@ -21,7 +21,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             
-            <!-- Помещает пункт внутрь раздела "Подключения" ("Connected devices") -->
             <meta-data
                 android:name="com.android.settings.category"
                 value="com.android.settings.category.ia.connect" />
