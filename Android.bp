@@ -5,7 +5,6 @@ android_app {
     resource_dirs: ["res"],
 
     certificate: "platform",
-    privileged: true,
     platform_apis: true,
 
     optimize: {
