@@ -7,6 +7,10 @@ android_app {
     certificate: "platform",
     platform_apis: true,
 
+    dex_preopt: {
+        enabled: false,
+    },
+
     optimize: {
         enabled: false,
     },
